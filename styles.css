@@ -1,0 +1,29 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 70%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+.card{
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    max-width: 190px;
+}

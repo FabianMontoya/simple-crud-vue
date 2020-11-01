@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App Vue by Fabian Montoya</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">    
+
+        <div class="card">
+            <h2>Add New Movie</h2>
+            <div autocomplete="off">
+                <label for="fname">Title:</label><br>
+                <input type="text" name="fname" v-model="model.title"><br>
+                <label for="lyear">Year:</label><br>
+                <input type="number" name="lyear" v-model.number="model.year" @keypress="isNumber($event)"><br>
+                <label for="lgen">Genres:</label><br>
+                <input type="text" name="lgen" v-model="model.genre"><br><br>
+                <button @click="saveNew">Add</button>
+            </div>
+        </div>
+        <br>
+        <div class="center">
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Genres</th>
+                    <th>Action</th>
+                </tr>
+                <tr v-for="(movie, index) in listMovies"> 
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.year}}</td>
+                    <td>{{movie.genre}}</td>
+                    <td style="text-align: center;"><i style="cursor: pointer;" class="fas fa-trash" @click="deleteMovie(movie)"></i></td>
+                </tr>            
+            </table>
+        </div>
+
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script async src="app.js"> </script>
+</html>
