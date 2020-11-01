@@ -16,7 +16,7 @@
                 <label for="fname">Title:</label><br>
                 <input type="text" name="fname" v-model="model.title"><br>
                 <label for="lyear">Year:</label><br>
-                <input type="number" name="lyear" v-model.number="model.year" @keypress="isNumber($event)"><br>
+                <input type="number" min="1895" name="lyear" v-model.number="model.year" @keypress="isNumber($event)"><br>
                 <label for="lgen">Genres:</label><br>
                 <input type="text" name="lgen" v-model="model.genre"><br><br>
                 <button @click="saveNew">Add</button>
